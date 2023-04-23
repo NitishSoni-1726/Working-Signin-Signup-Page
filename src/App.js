@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import Login from "./components/Login";
+import Newuser from "./components/Newuser";
+import Userinfo from "./components/Userinfo";
+import Userinfoedit from "./components/Userinfoedit";
 
 function App() {
+  useEffect(() => {
+    hell();
+  });
+  function hell() {
+    const state = localStorage.getItem("state");
+    if (state === null) {
+      document.getElementById("signup").classList.remove("d-none");
+    } else if (state === "true") {
+      document.getElementById("user-info").classList.remove("d-none");
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <div className="d-none" id="login">
+          <Login />
+        </div>
+        <div className="d-none" id="signup">
+          <Newuser />
+        </div>
+        <div className="d-none" id="user-info">
+          <Userinfo />
+        </div>
+        <div className="d-none" id="user-info-edit">
+          <Userinfoedit />
+        </div>
+      </div>
+    </>
   );
 }
 

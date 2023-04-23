@@ -1,13 +1,68 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(255, 193, 7);
+}
+.content {
+  height: 94vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn1:hover {
+  opacity: 70%;
+}
+
+.match-border {
+  border: solid 2px green;
+}
+
+.annimation {
+  animation: pop-in;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.details {
+  opacity: 80%;
+  cursor: default;
+}
+
+.loading {
+  font-size: 20px;
+  width: 50%;
+  height: 20vh;
+}
+
+.info {
+  height: 75vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.heading {
+  position: fixed;
+}
+
+.info::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.info::-webkit-scrollbar:vertical {
+  width: 5px;
+}
+
+.info::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+
+.info::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 5px solid white; /* should match background, can't be transparent */
+  background-color: white;
 }
