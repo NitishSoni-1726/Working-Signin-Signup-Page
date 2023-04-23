@@ -22,6 +22,7 @@ function Newuser() {
     const signupEmail = document.getElementById("signup-email").value;
     for (let i = 0; i < database.length; i++) {
       if (database[i].email === signupEmail) {
+        document.getElementById("signup").classList.add("d-none");
         document.getElementById("login").classList.remove("d-none");
         document.getElementById("login").classList.add("annimation");
         document.getElementById("already-alert").classList.remove("d-none");
