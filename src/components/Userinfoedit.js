@@ -61,6 +61,14 @@ function Userinfoedit() {
     document.getElementById("user-info").classList.remove("d-none");
     document.getElementById("user-info").classList.add("annimation");
   }
+  function dateSet() {
+    document.getElementById("dob").removeAttribute("type");
+    document.getElementById("dob").setAttribute("type", "date");
+  }
+  function dateRemove() {
+    document.getElementById("dob").removeAttribute("type");
+    document.getElementById("dob").setAttribute("type", "text");
+  }
   return (
     <>
       <div className="container d-flex align-items-center justify-content-center content bg-warning">
@@ -105,8 +113,11 @@ function Userinfoedit() {
             <div className="w-100 d-flex flex-column align-items-center justify-content-center m-2">
               <label className="w-100">Date-Of-Birth</label>
               <input
-                type="date"
+                type="text"
                 className="border border-light border-2 p-2 bg-transparent w-100 text-light"
+                placeholder={database.birthdate}
+                onMouseEnter={dateSet}
+                onMouseLeave={dateRemove}
                 id="dob"
               />
             </div>

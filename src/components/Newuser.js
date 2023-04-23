@@ -44,7 +44,7 @@ function Newuser() {
     document.signupform.reset();
     document.getElementById("login").classList.remove("d-none");
     document.getElementById("login").classList.add("annimation");
-    document.getElementById("success-alert").classList.remove("d-none");
+    document.getElementById("signup").classList.add("d-none");
     both();
   }
   function passwordAuthentication() {
